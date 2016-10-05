@@ -1,0 +1,13 @@
+{
+  "name": "Satellizer",
+  "version": "1.0.0",
+  "main": "index.html",
+  "description": "node webkit application for tracking time.",
+  "window": {
+    "title": "Satellizer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KinoAR/Satellizer.git" 
+  }
+}
