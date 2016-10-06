@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="SatellizerApp">
 <head>
   <title></title>
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script src="./node_modules/angular/angular.min.js"></script>
 </head>
-  <body class="container">
-    <div class="col-xs-12">
-      <p> Hello World </p>
+  <body ng-controller="TimerCtrl" class="container">
+    <ng-include src="'./templates/menu/menu.html'"> </ng-include>
+    <div class="row text-center">
+      <div class="col-xs-12">
+        <h1 id="elapsedTimeTimer">Elapsed Time: </h1>
+      </div>
     </div>
-    <div class="col-xs-12">
-    </div>
-    <div class="col-xs-12">
-    </div>
+    <ul class="timerList">
+      <li ng-repeat="n in [1,2,3,4]">
+        <ng-include src="'./templates/content/content.html'"></ng-include>
+      </li>
+    </ul>
   </body>
   <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="./node_modules/momentjs/build/moment.min.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="./node_modules/moment/min/moment.min.js"></script>
+  <script src="./js/controller.js"></script>
   <script src="./js/main.js"></script>
 </html>
