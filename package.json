@@ -8,6 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KinoAR/Satellizer.git" 
+    "url": "git+https://github.com/KinoAR/Satellizer.git"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.2"
   }
 }

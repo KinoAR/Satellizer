@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html ng-app="SatellizerApp">
+<html>
 <head>
   <title></title>
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script src="./node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/react/dist/react.js"></script>
+  <script src="node_modules/react-dom/dist/react-dom.js"></script>
 </head>
-  <body ng-controller="TimerCtrl" class="container">
-    <ng-include src="'./templates/menu/menu.html'"> </ng-include>
+  <body class="container">
+    <!-- Menu -->
     <div class="row text-center">
-      <div class="col-xs-12">
-        <h1 id="elapsedTimeTimer">Elapsed Time: </h1>
+      <div id="elapsedTimer" class="col-xs-12">
       </div>
     </div>
-    <ul class="timerList">
-      <li ng-repeat="n in [1,2,3,4]">
-        <ng-include src="'./templates/content/content.html'"></ng-include>
-      </li>
-    </ul>
+    <div id="Timers">
+    </div>
   </body>
   <script src="./node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="./node_modules/moment/min/moment.min.js"></script>
-  <script src="./js/controller.js"></script>
-  <script src="./js/main.js"></script>
+  <script src="./js/main.min.js"></script>
+  <script>
+  var path = './';
+  var fs = require('fs');
+
+  fs.watch(path, function() {
+    if (location)
+      location.reload();
+  });
+</script>
 </html>
