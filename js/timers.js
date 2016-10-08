@@ -1,46 +1,27 @@
+import Timer from "./timer";
+
 class TimerList extends React.Component {
+  constructor() {
+    super();
+  }
   render() {
-    let timers = ["Time1", "Time2", "Time3", "Time4"];
-    return React.createElement(
-      "ul",
-      { className: "timerList" },
-      timers.map((timer, index) => {
-        console.log(timer);
-        return React.createElement(
-          "li",
-          { key: index },
-          React.createElement(
-            "div",
-            { className: "timerItem" },
-            React.createElement(
-              "div",
-              { className: "row" },
-              React.createElement(
-                "div",
-                { className: "col-xs-4" },
-                "Timer Button"
-              ),
-              React.createElement(
-                "div",
-                { className: "col-xs-8" },
-                React.createElement(
-                  "div",
-                  { className: "col-xs-12" },
-                  "Task Description"
-                ),
-                React.createElement(
-                  "div",
-                  { className: "col-xs-12" },
-                  moment().format("hh:mm:ss")
-                )
-              )
-            )
-          )
-        );
-      })
+    return (
+      <ul className="timerList">
+        {this.props.timers.map((timer, index) => {
+          console.log(timer);
+          return (
+            <li key={index}>
+              {this.props.timers[index]}
+            </li>);
+        })}
+      </ul>
     );
+  }
+
+  addTimer() {
+    this.props.timers.push(<Timer />);
   }
 }
 
-ReactDOM.render(React.createElement(TimerList, null), document.getElementById("Timers"));
-//# sourceMappingURL=C:\Users\Kiyic\Documents\Development Projects\Satellizer\js\timers.js.map
+
+ReactDOM.render(<TimerList timers={[<Timer />, <Timer />]} />, document.getElementById("Timers"));
